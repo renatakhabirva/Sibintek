@@ -1,0 +1,1543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище SibintekModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ArchitecturalDesign">
+          <Key>
+            <PropertyRef Name="ArchitecturalDesignID" />
+          </Key>
+          <Property Name="ArchitecturalDesignID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ArchitecturalDesign" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ArchitecturalDesignPoint" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AZI">
+          <Key>
+            <PropertyRef Name="AZIID" />
+          </Key>
+          <Property Name="AZIID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AZI" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="AZIPoint" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BelongingToSystem">
+          <Key>
+            <PropertyRef Name="BelongingToSystemID" />
+          </Key>
+          <Property Name="BelongingToSystemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BelongingToSystem" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BelongingToSystemPoint" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BusinessUnitSupport">
+          <Key>
+            <PropertyRef Name="BusinessUnitSupportID" />
+          </Key>
+          <Property Name="BusinessUnitSupportID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BusinessUnitSupport" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="BusinessUnitSupportPoint" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Sibintek.dbo.Classifier" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="Classifier">
+          <Key>
+            <PropertyRef Name="ClassifierID" />
+            <PropertyRef Name="ClassifierCostType" />
+            <PropertyRef Name="ClassifierTypeByContent" />
+            <PropertyRef Name="ClassifierCoveredProjectType" />
+            <PropertyRef Name="ClassifierBelongingToSystem" />
+            <PropertyRef Name="ClassifierPrivacyLevel" />
+            <PropertyRef Name="ClassifierInternetAccess" />
+            <PropertyRef Name="ClassifierEconomicEffect" />
+            <PropertyRef Name="ClassifierArchitecturalDesign" />
+            <PropertyRef Name="ClassifierAZI" />
+            <PropertyRef Name="ClassifierEquipment" />
+            <PropertyRef Name="ClassifierSoftwareLicenses" />
+            <PropertyRef Name="ClassifierBusinessUnitSupport" />
+            <PropertyRef Name="ClassifierSum" />
+            <PropertyRef Name="ClassifierCriticalyLevel" />
+            <PropertyRef Name="ClassifierDecisionMakingLevel" />
+            <PropertyRef Name="ClassifierICLevel" />
+            <PropertyRef Name="ClassifierQuantityCC" />
+            <PropertyRef Name="ClassifierQuantityIS" />
+            <PropertyRef Name="ClassifierNumberOfStakeholders" />
+            <PropertyRef Name="ClassifierQuantityContract" />
+            <PropertyRef Name="ClassifierBranch" />
+            <PropertyRef Name="ClassifierQuantityContractor" />
+            <PropertyRef Name="ClassifierEmployeeManager" />
+            <PropertyRef Name="ClassifierProjectType" />
+          </Key>
+          <Property Name="ClassifierID" Type="int" Nullable="false" />
+          <Property Name="ClassifierCostType" Type="int" Nullable="false" />
+          <Property Name="ClassifierTypeByContent" Type="int" Nullable="false" />
+          <Property Name="ClassifierCoveredProjectType" Type="int" Nullable="false" />
+          <Property Name="ClassifierBelongingToSystem" Type="int" Nullable="false" />
+          <Property Name="ClassifierPrivacyLevel" Type="int" Nullable="false" />
+          <Property Name="ClassifierInternetAccess" Type="int" Nullable="false" />
+          <Property Name="ClassifierEconomicEffect" Type="int" Nullable="false" />
+          <Property Name="ClassifierArchitecturalDesign" Type="int" Nullable="false" />
+          <Property Name="ClassifierAZI" Type="int" Nullable="false" />
+          <Property Name="ClassifierEquipment" Type="int" Nullable="false" />
+          <Property Name="ClassifierSoftwareLicenses" Type="int" Nullable="false" />
+          <Property Name="ClassifierBusinessUnitSupport" Type="int" Nullable="false" />
+          <Property Name="ClassifierSum" Type="int" Nullable="false" />
+          <Property Name="ClassifierCriticalyLevel" Type="int" Nullable="false" />
+          <Property Name="ClassifierDecisionMakingLevel" Type="int" Nullable="false" />
+          <Property Name="ClassifierICLevel" Type="int" Nullable="false" />
+          <Property Name="ClassifierQuantityCC" Type="int" Nullable="false" />
+          <Property Name="ClassifierQuantityIS" Type="int" Nullable="false" />
+          <Property Name="ClassifierNumberOfStakeholders" Type="int" Nullable="false" />
+          <Property Name="ClassifierQuantityContract" Type="int" Nullable="false" />
+          <Property Name="ClassifierBranch" Type="int" Nullable="false" />
+          <Property Name="ClassifierQuantityContractor" Type="int" Nullable="false" />
+          <Property Name="ClassifierEmployeeManager" Type="int" Nullable="false" />
+          <Property Name="ClassifierEmployeeAdmin" Type="int" />
+          <Property Name="ClassifierProjectType" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CostType">
+          <Key>
+            <PropertyRef Name="CostTypeID" />
+          </Key>
+          <Property Name="CostTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CosttypeName" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="CostTypePoint" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CoveredByTheProjectType">
+          <Key>
+            <PropertyRef Name="CoveredByTheProjectTypeID" />
+          </Key>
+          <Property Name="CoveredByTheProjectTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CoveredByTheProjectType" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="CoveredByTheProjectTypePoint" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CriticalityLevel">
+          <Key>
+            <PropertyRef Name="CriticalityLevelID" />
+          </Key>
+          <Property Name="CriticalityLevelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CriticalityLevel" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="CriticalityLevelPoint" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DecisionMakingLevel">
+          <Key>
+            <PropertyRef Name="DecisionMakingLevelID" />
+          </Key>
+          <Property Name="DecisionMakingLevelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DecisionMakingLevel" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DecisionMakingLevelPoint" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EconomicEffect">
+          <Key>
+            <PropertyRef Name="EconomicEffectID" />
+          </Key>
+          <Property Name="EconomicEffectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EconomicEffect" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="EconomicEffectPoint" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeFullName" Type="nvarchar" MaxLength="120" Nullable="false" />
+          <Property Name="EmployeeType" Type="int" />
+          <Property Name="EmployeeFTE" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeeFTE">
+          <Key>
+            <PropertyRef Name="EmployeeFTEID" />
+          </Key>
+          <Property Name="EmployeeFTEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeFTE" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeeType">
+          <Key>
+            <PropertyRef Name="EmployeeTypeID" />
+          </Key>
+          <Property Name="EmployeeTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeType" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ICLevel">
+          <Key>
+            <PropertyRef Name="ICLevelID" />
+          </Key>
+          <Property Name="ICLevelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ICLevel" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ICLevelPoint" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InternetAccess">
+          <Key>
+            <PropertyRef Name="InternetAccessID" />
+          </Key>
+          <Property Name="InternetAccessID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InternetAccess" Type="nvarchar" MaxLength="120" Nullable="false" />
+          <Property Name="InternetAccessPoint" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PrivacyLevel">
+          <Key>
+            <PropertyRef Name="PrivacyLevelID" />
+          </Key>
+          <Property Name="PrivacyLevelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PrivacyLevel" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PrivacyLevelPoint" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProjectType">
+          <Key>
+            <PropertyRef Name="ProjectTypeID" />
+          </Key>
+          <Property Name="ProjectTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProjectTypeManagerFTE" Type="int" Nullable="false" />
+          <Property Name="ProjectTypeAdminFTE" Type="int" />
+        </EntityType>
+        <EntityType Name="PurchaseOfEquipment">
+          <Key>
+            <PropertyRef Name="PurchaseOfEquipmentID" />
+          </Key>
+          <Property Name="PurchaseOfEquipmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PurchaseOfEquipment" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="PurchaseOfEquipmentPoint" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PurchasingSoftwareLicenses">
+          <Key>
+            <PropertyRef Name="PurchasingSoftwareLicensesID" />
+          </Key>
+          <Property Name="PurchasingSoftwareLicensesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PurchasingSoftwareLicenses" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PurchasingSoftwareLicensesPoint" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sum">
+          <Key>
+            <PropertyRef Name="SumID" />
+          </Key>
+          <Property Name="SumID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sum" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SumPoint" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypeByContent">
+          <Key>
+            <PropertyRef Name="TypeByContentID" />
+          </Key>
+          <Property Name="TypeByContentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeByContent" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="TypeByContentpoint" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Classifier_ArchitecturalDesign">
+          <End Role="ArchitecturalDesign" Type="Self.ArchitecturalDesign" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ArchitecturalDesign">
+              <PropertyRef Name="ArchitecturalDesignID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierArchitecturalDesign" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_AZI">
+          <End Role="AZI" Type="Self.AZI" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AZI">
+              <PropertyRef Name="AZIID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierAZI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_BelongingToSystem">
+          <End Role="BelongingToSystem" Type="Self.BelongingToSystem" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BelongingToSystem">
+              <PropertyRef Name="BelongingToSystemID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierBelongingToSystem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_BusinessUnitSupport">
+          <End Role="BusinessUnitSupport" Type="Self.BusinessUnitSupport" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusinessUnitSupport">
+              <PropertyRef Name="BusinessUnitSupportID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierBusinessUnitSupport" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_CostType">
+          <End Role="CostType" Type="Self.CostType" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CostType">
+              <PropertyRef Name="CostTypeID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierCostType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_CoveredByTheProjectType">
+          <End Role="CoveredByTheProjectType" Type="Self.CoveredByTheProjectType" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoveredByTheProjectType">
+              <PropertyRef Name="CoveredByTheProjectTypeID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierCoveredProjectType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_CriticalityLevel">
+          <End Role="CriticalityLevel" Type="Self.CriticalityLevel" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CriticalityLevel">
+              <PropertyRef Name="CriticalityLevelID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierCriticalyLevel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_DecisionMakingLevel">
+          <End Role="DecisionMakingLevel" Type="Self.DecisionMakingLevel" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DecisionMakingLevel">
+              <PropertyRef Name="DecisionMakingLevelID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierDecisionMakingLevel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_EconomicEffect">
+          <End Role="EconomicEffect" Type="Self.EconomicEffect" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EconomicEffect">
+              <PropertyRef Name="EconomicEffectID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierEconomicEffect" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierEmployeeManager" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_Employee1">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierEmployeeAdmin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_ICLevel">
+          <End Role="ICLevel" Type="Self.ICLevel" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ICLevel">
+              <PropertyRef Name="ICLevelID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierICLevel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_InternetAccess">
+          <End Role="InternetAccess" Type="Self.InternetAccess" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InternetAccess">
+              <PropertyRef Name="InternetAccessID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierInternetAccess" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_PrivacyLevel">
+          <End Role="PrivacyLevel" Type="Self.PrivacyLevel" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PrivacyLevel">
+              <PropertyRef Name="PrivacyLevelID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierPrivacyLevel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_ProjectType">
+          <End Role="ProjectType" Type="Self.ProjectType" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectType">
+              <PropertyRef Name="ProjectTypeID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierProjectType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_PurchaseOfEquipment">
+          <End Role="PurchaseOfEquipment" Type="Self.PurchaseOfEquipment" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PurchaseOfEquipment">
+              <PropertyRef Name="PurchaseOfEquipmentID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierEquipment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_PurchasingSoftwareLicenses">
+          <End Role="PurchasingSoftwareLicenses" Type="Self.PurchasingSoftwareLicenses" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PurchasingSoftwareLicenses">
+              <PropertyRef Name="PurchasingSoftwareLicensesID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierSoftwareLicenses" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_Sum">
+          <End Role="Sum" Type="Self.Sum" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sum">
+              <PropertyRef Name="SumID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierSum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_TypeByContent">
+          <End Role="TypeByContent" Type="Self.TypeByContent" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeByContent">
+              <PropertyRef Name="TypeByContentID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierTypeByContent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_EmployeeFTE">
+          <End Role="EmployeeFTE" Type="Self.EmployeeFTE" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeFTE">
+              <PropertyRef Name="EmployeeFTEID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="EmployeeFTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_EmployeeType">
+          <End Role="EmployeeType" Type="Self.EmployeeType" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeType">
+              <PropertyRef Name="EmployeeTypeID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="EmployeeType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectType_EmployeeFTE">
+          <End Role="EmployeeFTE" Type="Self.EmployeeFTE" Multiplicity="0..1" />
+          <End Role="ProjectType" Type="Self.ProjectType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeFTE">
+              <PropertyRef Name="EmployeeFTEID" />
+            </Principal>
+            <Dependent Role="ProjectType">
+              <PropertyRef Name="ProjectTypeAdminFTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectType_EmployeeFTE1">
+          <End Role="EmployeeFTE" Type="Self.EmployeeFTE" Multiplicity="1" />
+          <End Role="ProjectType" Type="Self.ProjectType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeFTE">
+              <PropertyRef Name="EmployeeFTEID" />
+            </Principal>
+            <Dependent Role="ProjectType">
+              <PropertyRef Name="ProjectTypeManagerFTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище SibintekModelContainer">
+          <EntitySet Name="ArchitecturalDesign" EntityType="Self.ArchitecturalDesign" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AZI" EntityType="Self.AZI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BelongingToSystem" EntityType="Self.BelongingToSystem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BusinessUnitSupport" EntityType="Self.BusinessUnitSupport" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CostType" EntityType="Self.CostType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoveredByTheProjectType" EntityType="Self.CoveredByTheProjectType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CriticalityLevel" EntityType="Self.CriticalityLevel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DecisionMakingLevel" EntityType="Self.DecisionMakingLevel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EconomicEffect" EntityType="Self.EconomicEffect" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeFTE" EntityType="Self.EmployeeFTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeType" EntityType="Self.EmployeeType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ICLevel" EntityType="Self.ICLevel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InternetAccess" EntityType="Self.InternetAccess" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PrivacyLevel" EntityType="Self.PrivacyLevel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectType" EntityType="Self.ProjectType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PurchaseOfEquipment" EntityType="Self.PurchaseOfEquipment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PurchasingSoftwareLicenses" EntityType="Self.PurchasingSoftwareLicenses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sum" EntityType="Self.Sum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeByContent" EntityType="Self.TypeByContent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Classifier" EntityType="Self.Classifier" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Classifier].[ClassifierID] AS [ClassifierID], 
+[Classifier].[ClassifierCostType] AS [ClassifierCostType], 
+[Classifier].[ClassifierTypeByContent] AS [ClassifierTypeByContent], 
+[Classifier].[ClassifierCoveredProjectType] AS [ClassifierCoveredProjectType], 
+[Classifier].[ClassifierBelongingToSystem] AS [ClassifierBelongingToSystem], 
+[Classifier].[ClassifierPrivacyLevel] AS [ClassifierPrivacyLevel], 
+[Classifier].[ClassifierInternetAccess] AS [ClassifierInternetAccess], 
+[Classifier].[ClassifierEconomicEffect] AS [ClassifierEconomicEffect], 
+[Classifier].[ClassifierArchitecturalDesign] AS [ClassifierArchitecturalDesign], 
+[Classifier].[ClassifierAZI] AS [ClassifierAZI], 
+[Classifier].[ClassifierEquipment] AS [ClassifierEquipment], 
+[Classifier].[ClassifierSoftwareLicenses] AS [ClassifierSoftwareLicenses], 
+[Classifier].[ClassifierBusinessUnitSupport] AS [ClassifierBusinessUnitSupport], 
+[Classifier].[ClassifierSum] AS [ClassifierSum], 
+[Classifier].[ClassifierCriticalyLevel] AS [ClassifierCriticalyLevel], 
+[Classifier].[ClassifierDecisionMakingLevel] AS [ClassifierDecisionMakingLevel], 
+[Classifier].[ClassifierICLevel] AS [ClassifierICLevel], 
+[Classifier].[ClassifierQuantityCC] AS [ClassifierQuantityCC], 
+[Classifier].[ClassifierQuantityIS] AS [ClassifierQuantityIS], 
+[Classifier].[ClassifierNumberOfStakeholders] AS [ClassifierNumberOfStakeholders], 
+[Classifier].[ClassifierQuantityContract] AS [ClassifierQuantityContract], 
+[Classifier].[ClassifierBranch] AS [ClassifierBranch], 
+[Classifier].[ClassifierQuantityContractor] AS [ClassifierQuantityContractor], 
+[Classifier].[ClassifierEmployeeManager] AS [ClassifierEmployeeManager], 
+[Classifier].[ClassifierEmployeeAdmin] AS [ClassifierEmployeeAdmin], 
+[Classifier].[ClassifierProjectType] AS [ClassifierProjectType]
+FROM [dbo].[Classifier] AS [Classifier]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Classifier_ArchitecturalDesign" Association="Self.FK_Classifier_ArchitecturalDesign">
+            <End Role="ArchitecturalDesign" EntitySet="ArchitecturalDesign" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_AZI" Association="Self.FK_Classifier_AZI">
+            <End Role="AZI" EntitySet="AZI" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_BelongingToSystem" Association="Self.FK_Classifier_BelongingToSystem">
+            <End Role="BelongingToSystem" EntitySet="BelongingToSystem" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_BusinessUnitSupport" Association="Self.FK_Classifier_BusinessUnitSupport">
+            <End Role="BusinessUnitSupport" EntitySet="BusinessUnitSupport" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_CostType" Association="Self.FK_Classifier_CostType">
+            <End Role="CostType" EntitySet="CostType" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_CoveredByTheProjectType" Association="Self.FK_Classifier_CoveredByTheProjectType">
+            <End Role="CoveredByTheProjectType" EntitySet="CoveredByTheProjectType" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_CriticalityLevel" Association="Self.FK_Classifier_CriticalityLevel">
+            <End Role="CriticalityLevel" EntitySet="CriticalityLevel" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_DecisionMakingLevel" Association="Self.FK_Classifier_DecisionMakingLevel">
+            <End Role="DecisionMakingLevel" EntitySet="DecisionMakingLevel" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_EconomicEffect" Association="Self.FK_Classifier_EconomicEffect">
+            <End Role="EconomicEffect" EntitySet="EconomicEffect" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_Employee" Association="Self.FK_Classifier_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_Employee1" Association="Self.FK_Classifier_Employee1">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_ICLevel" Association="Self.FK_Classifier_ICLevel">
+            <End Role="ICLevel" EntitySet="ICLevel" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_InternetAccess" Association="Self.FK_Classifier_InternetAccess">
+            <End Role="InternetAccess" EntitySet="InternetAccess" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_PrivacyLevel" Association="Self.FK_Classifier_PrivacyLevel">
+            <End Role="PrivacyLevel" EntitySet="PrivacyLevel" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_ProjectType" Association="Self.FK_Classifier_ProjectType">
+            <End Role="ProjectType" EntitySet="ProjectType" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_PurchaseOfEquipment" Association="Self.FK_Classifier_PurchaseOfEquipment">
+            <End Role="PurchaseOfEquipment" EntitySet="PurchaseOfEquipment" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_PurchasingSoftwareLicenses" Association="Self.FK_Classifier_PurchasingSoftwareLicenses">
+            <End Role="PurchasingSoftwareLicenses" EntitySet="PurchasingSoftwareLicenses" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_Sum" Association="Self.FK_Classifier_Sum">
+            <End Role="Sum" EntitySet="Sum" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_TypeByContent" Association="Self.FK_Classifier_TypeByContent">
+            <End Role="TypeByContent" EntitySet="TypeByContent" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_EmployeeFTE" Association="Self.FK_Employee_EmployeeFTE">
+            <End Role="EmployeeFTE" EntitySet="EmployeeFTE" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_EmployeeType" Association="Self.FK_Employee_EmployeeType">
+            <End Role="EmployeeType" EntitySet="EmployeeType" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectType_EmployeeFTE" Association="Self.FK_ProjectType_EmployeeFTE">
+            <End Role="EmployeeFTE" EntitySet="EmployeeFTE" />
+            <End Role="ProjectType" EntitySet="ProjectType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectType_EmployeeFTE1" Association="Self.FK_ProjectType_EmployeeFTE1">
+            <End Role="EmployeeFTE" EntitySet="EmployeeFTE" />
+            <End Role="ProjectType" EntitySet="ProjectType" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SibintekModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ArchitecturalDesign">
+          <Key>
+            <PropertyRef Name="ArchitecturalDesignID" />
+          </Key>
+          <Property Name="ArchitecturalDesignID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ArchitecturalDesign1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ArchitecturalDesignPoint" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classifier" Relationship="Self.FK_Classifier_ArchitecturalDesign" FromRole="ArchitecturalDesign" ToRole="Classifier" />
+        </EntityType>
+        <EntityType Name="AZI">
+          <Key>
+            <PropertyRef Name="AZIID" />
+          </Key>
+          <Property Name="AZIID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AZI1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AZIPoint" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classifier" Relationship="Self.FK_Classifier_AZI" FromRole="AZI" ToRole="Classifier" />
+        </EntityType>
+        <EntityType Name="BelongingToSystem">
+          <Key>
+            <PropertyRef Name="BelongingToSystemID" />
+          </Key>
+          <Property Name="BelongingToSystemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BelongingToSystem1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BelongingToSystemPoint" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classifier" Relationship="Self.FK_Classifier_BelongingToSystem" FromRole="BelongingToSystem" ToRole="Classifier" />
+        </EntityType>
+        <EntityType Name="BusinessUnitSupport">
+          <Key>
+            <PropertyRef Name="BusinessUnitSupportID" />
+          </Key>
+          <Property Name="BusinessUnitSupportID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BusinessUnitSupport1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BusinessUnitSupportPoint" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classifier" Relationship="Self.FK_Classifier_BusinessUnitSupport" FromRole="BusinessUnitSupport" ToRole="Classifier" />
+        </EntityType>
+        <EntityType Name="CostType">
+          <Key>
+            <PropertyRef Name="CostTypeID" />
+          </Key>
+          <Property Name="CostTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CosttypeName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CostTypePoint" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classifier" Relationship="Self.FK_Classifier_CostType" FromRole="CostType" ToRole="Classifier" />
+        </EntityType>
+        <EntityType Name="CoveredByTheProjectType">
+          <Key>
+            <PropertyRef Name="CoveredByTheProjectTypeID" />
+          </Key>
+          <Property Name="CoveredByTheProjectTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CoveredByTheProjectType1" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CoveredByTheProjectTypePoint" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classifier" Relationship="Self.FK_Classifier_CoveredByTheProjectType" FromRole="CoveredByTheProjectType" ToRole="Classifier" />
+        </EntityType>
+        <EntityType Name="CriticalityLevel">
+          <Key>
+            <PropertyRef Name="CriticalityLevelID" />
+          </Key>
+          <Property Name="CriticalityLevelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CriticalityLevel1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CriticalityLevelPoint" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classifier" Relationship="Self.FK_Classifier_CriticalityLevel" FromRole="CriticalityLevel" ToRole="Classifier" />
+        </EntityType>
+        <EntityType Name="DecisionMakingLevel">
+          <Key>
+            <PropertyRef Name="DecisionMakingLevelID" />
+          </Key>
+          <Property Name="DecisionMakingLevelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DecisionMakingLevel1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DecisionMakingLevelPoint" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classifier" Relationship="Self.FK_Classifier_DecisionMakingLevel" FromRole="DecisionMakingLevel" ToRole="Classifier" />
+        </EntityType>
+        <EntityType Name="EconomicEffect">
+          <Key>
+            <PropertyRef Name="EconomicEffectID" />
+          </Key>
+          <Property Name="EconomicEffectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EconomicEffect1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EconomicEffectPoint" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classifier" Relationship="Self.FK_Classifier_EconomicEffect" FromRole="EconomicEffect" ToRole="Classifier" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeFullName" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmployeeType" Type="Int32" />
+          <Property Name="EmployeeFTE" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classifier" Relationship="Self.FK_Classifier_Employee" FromRole="Employee" ToRole="Classifier" />
+          <NavigationProperty Name="Classifier1" Relationship="Self.FK_Classifier_Employee1" FromRole="Employee" ToRole="Classifier" />
+          <NavigationProperty Name="EmployeeFTE1" Relationship="Self.FK_Employee_EmployeeFTE" FromRole="Employee" ToRole="EmployeeFTE" />
+          <NavigationProperty Name="EmployeeType1" Relationship="Self.FK_Employee_EmployeeType" FromRole="Employee" ToRole="EmployeeType" />
+        </EntityType>
+        <EntityType Name="EmployeeFTE">
+          <Key>
+            <PropertyRef Name="EmployeeFTEID" />
+          </Key>
+          <Property Name="EmployeeFTEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeFTE1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_EmployeeFTE" FromRole="EmployeeFTE" ToRole="Employee" />
+          <NavigationProperty Name="ProjectType" Relationship="Self.FK_ProjectType_EmployeeFTE" FromRole="EmployeeFTE" ToRole="ProjectType" />
+          <NavigationProperty Name="ProjectType1" Relationship="Self.FK_ProjectType_EmployeeFTE1" FromRole="EmployeeFTE" ToRole="ProjectType" />
+        </EntityType>
+        <EntityType Name="EmployeeType">
+          <Key>
+            <PropertyRef Name="EmployeeTypeID" />
+          </Key>
+          <Property Name="EmployeeTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeType1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_EmployeeType" FromRole="EmployeeType" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="ICLevel">
+          <Key>
+            <PropertyRef Name="ICLevelID" />
+          </Key>
+          <Property Name="ICLevelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ICLevel1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ICLevelPoint" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classifier" Relationship="Self.FK_Classifier_ICLevel" FromRole="ICLevel" ToRole="Classifier" />
+        </EntityType>
+        <EntityType Name="InternetAccess">
+          <Key>
+            <PropertyRef Name="InternetAccessID" />
+          </Key>
+          <Property Name="InternetAccessID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InternetAccess1" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="InternetAccessPoint" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classifier" Relationship="Self.FK_Classifier_InternetAccess" FromRole="InternetAccess" ToRole="Classifier" />
+        </EntityType>
+        <EntityType Name="PrivacyLevel">
+          <Key>
+            <PropertyRef Name="PrivacyLevelID" />
+          </Key>
+          <Property Name="PrivacyLevelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PrivacyLevel1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PrivacyLevelPoint" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classifier" Relationship="Self.FK_Classifier_PrivacyLevel" FromRole="PrivacyLevel" ToRole="Classifier" />
+        </EntityType>
+        <EntityType Name="ProjectType">
+          <Key>
+            <PropertyRef Name="ProjectTypeID" />
+          </Key>
+          <Property Name="ProjectTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectType1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProjectTypeManagerFTE" Type="Int32" Nullable="false" />
+          <Property Name="ProjectTypeAdminFTE" Type="Int32" />
+          <NavigationProperty Name="EmployeeFTE" Relationship="Self.FK_ProjectType_EmployeeFTE" FromRole="ProjectType" ToRole="EmployeeFTE" />
+          <NavigationProperty Name="EmployeeFTE1" Relationship="Self.FK_ProjectType_EmployeeFTE1" FromRole="ProjectType" ToRole="EmployeeFTE" />
+          <NavigationProperty Name="Classifier" Relationship="Self.FK_Classifier_ProjectType" FromRole="ProjectType" ToRole="Classifier" />
+        </EntityType>
+        <EntityType Name="PurchaseOfEquipment">
+          <Key>
+            <PropertyRef Name="PurchaseOfEquipmentID" />
+          </Key>
+          <Property Name="PurchaseOfEquipmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PurchaseOfEquipment1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PurchaseOfEquipmentPoint" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classifier" Relationship="Self.FK_Classifier_PurchaseOfEquipment" FromRole="PurchaseOfEquipment" ToRole="Classifier" />
+        </EntityType>
+        <EntityType Name="PurchasingSoftwareLicenses">
+          <Key>
+            <PropertyRef Name="PurchasingSoftwareLicensesID" />
+          </Key>
+          <Property Name="PurchasingSoftwareLicensesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PurchasingSoftwareLicenses1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PurchasingSoftwareLicensesPoint" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classifier" Relationship="Self.FK_Classifier_PurchasingSoftwareLicenses" FromRole="PurchasingSoftwareLicenses" ToRole="Classifier" />
+        </EntityType>
+        <EntityType Name="Sum">
+          <Key>
+            <PropertyRef Name="SumID" />
+          </Key>
+          <Property Name="SumID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sum1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SumPoint" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classifier" Relationship="Self.FK_Classifier_Sum" FromRole="Sum" ToRole="Classifier" />
+        </EntityType>
+        <EntityType Name="TypeByContent">
+          <Key>
+            <PropertyRef Name="TypeByContentID" />
+          </Key>
+          <Property Name="TypeByContentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeByContent1" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TypeByContentpoint" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classifier" Relationship="Self.FK_Classifier_TypeByContent" FromRole="TypeByContent" ToRole="Classifier" />
+        </EntityType>
+        <EntityType Name="Classifier">
+          <Key>
+            <PropertyRef Name="ClassifierID" />
+            <PropertyRef Name="ClassifierCostType" />
+            <PropertyRef Name="ClassifierTypeByContent" />
+            <PropertyRef Name="ClassifierCoveredProjectType" />
+            <PropertyRef Name="ClassifierBelongingToSystem" />
+            <PropertyRef Name="ClassifierPrivacyLevel" />
+            <PropertyRef Name="ClassifierInternetAccess" />
+            <PropertyRef Name="ClassifierEconomicEffect" />
+            <PropertyRef Name="ClassifierArchitecturalDesign" />
+            <PropertyRef Name="ClassifierAZI" />
+            <PropertyRef Name="ClassifierEquipment" />
+            <PropertyRef Name="ClassifierSoftwareLicenses" />
+            <PropertyRef Name="ClassifierBusinessUnitSupport" />
+            <PropertyRef Name="ClassifierSum" />
+            <PropertyRef Name="ClassifierCriticalyLevel" />
+            <PropertyRef Name="ClassifierDecisionMakingLevel" />
+            <PropertyRef Name="ClassifierICLevel" />
+            <PropertyRef Name="ClassifierQuantityCC" />
+            <PropertyRef Name="ClassifierQuantityIS" />
+            <PropertyRef Name="ClassifierNumberOfStakeholders" />
+            <PropertyRef Name="ClassifierQuantityContract" />
+            <PropertyRef Name="ClassifierBranch" />
+            <PropertyRef Name="ClassifierQuantityContractor" />
+            <PropertyRef Name="ClassifierEmployeeManager" />
+            <PropertyRef Name="ClassifierProjectType" />
+          </Key>
+          <Property Name="ClassifierID" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierCostType" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierTypeByContent" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierCoveredProjectType" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierBelongingToSystem" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierPrivacyLevel" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierInternetAccess" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierEconomicEffect" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierArchitecturalDesign" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierAZI" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierEquipment" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierSoftwareLicenses" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierBusinessUnitSupport" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierSum" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierCriticalyLevel" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierDecisionMakingLevel" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierICLevel" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierQuantityCC" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierQuantityIS" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierNumberOfStakeholders" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierQuantityContract" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierBranch" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierQuantityContractor" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierEmployeeManager" Type="Int32" Nullable="false" />
+          <Property Name="ClassifierEmployeeAdmin" Type="Int32" />
+          <Property Name="ClassifierProjectType" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ArchitecturalDesign" Relationship="Self.FK_Classifier_ArchitecturalDesign" FromRole="Classifier" ToRole="ArchitecturalDesign" />
+          <NavigationProperty Name="AZI" Relationship="Self.FK_Classifier_AZI" FromRole="Classifier" ToRole="AZI" />
+          <NavigationProperty Name="BelongingToSystem" Relationship="Self.FK_Classifier_BelongingToSystem" FromRole="Classifier" ToRole="BelongingToSystem" />
+          <NavigationProperty Name="BusinessUnitSupport" Relationship="Self.FK_Classifier_BusinessUnitSupport" FromRole="Classifier" ToRole="BusinessUnitSupport" />
+          <NavigationProperty Name="CostType" Relationship="Self.FK_Classifier_CostType" FromRole="Classifier" ToRole="CostType" />
+          <NavigationProperty Name="CoveredByTheProjectType" Relationship="Self.FK_Classifier_CoveredByTheProjectType" FromRole="Classifier" ToRole="CoveredByTheProjectType" />
+          <NavigationProperty Name="CriticalityLevel" Relationship="Self.FK_Classifier_CriticalityLevel" FromRole="Classifier" ToRole="CriticalityLevel" />
+          <NavigationProperty Name="DecisionMakingLevel" Relationship="Self.FK_Classifier_DecisionMakingLevel" FromRole="Classifier" ToRole="DecisionMakingLevel" />
+          <NavigationProperty Name="EconomicEffect" Relationship="Self.FK_Classifier_EconomicEffect" FromRole="Classifier" ToRole="EconomicEffect" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Classifier_Employee" FromRole="Classifier" ToRole="Employee" />
+          <NavigationProperty Name="Employee1" Relationship="Self.FK_Classifier_Employee1" FromRole="Classifier" ToRole="Employee" />
+          <NavigationProperty Name="ICLevel" Relationship="Self.FK_Classifier_ICLevel" FromRole="Classifier" ToRole="ICLevel" />
+          <NavigationProperty Name="InternetAccess" Relationship="Self.FK_Classifier_InternetAccess" FromRole="Classifier" ToRole="InternetAccess" />
+          <NavigationProperty Name="PrivacyLevel" Relationship="Self.FK_Classifier_PrivacyLevel" FromRole="Classifier" ToRole="PrivacyLevel" />
+          <NavigationProperty Name="ProjectType" Relationship="Self.FK_Classifier_ProjectType" FromRole="Classifier" ToRole="ProjectType" />
+          <NavigationProperty Name="PurchaseOfEquipment" Relationship="Self.FK_Classifier_PurchaseOfEquipment" FromRole="Classifier" ToRole="PurchaseOfEquipment" />
+          <NavigationProperty Name="PurchasingSoftwareLicenses" Relationship="Self.FK_Classifier_PurchasingSoftwareLicenses" FromRole="Classifier" ToRole="PurchasingSoftwareLicenses" />
+          <NavigationProperty Name="Sum" Relationship="Self.FK_Classifier_Sum" FromRole="Classifier" ToRole="Sum" />
+          <NavigationProperty Name="TypeByContent" Relationship="Self.FK_Classifier_TypeByContent" FromRole="Classifier" ToRole="TypeByContent" />
+        </EntityType>
+        <Association Name="FK_Classifier_ArchitecturalDesign">
+          <End Role="ArchitecturalDesign" Type="Self.ArchitecturalDesign" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ArchitecturalDesign">
+              <PropertyRef Name="ArchitecturalDesignID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierArchitecturalDesign" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_AZI">
+          <End Role="AZI" Type="Self.AZI" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AZI">
+              <PropertyRef Name="AZIID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierAZI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_BelongingToSystem">
+          <End Role="BelongingToSystem" Type="Self.BelongingToSystem" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BelongingToSystem">
+              <PropertyRef Name="BelongingToSystemID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierBelongingToSystem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_BusinessUnitSupport">
+          <End Role="BusinessUnitSupport" Type="Self.BusinessUnitSupport" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusinessUnitSupport">
+              <PropertyRef Name="BusinessUnitSupportID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierBusinessUnitSupport" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_CostType">
+          <End Role="CostType" Type="Self.CostType" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CostType">
+              <PropertyRef Name="CostTypeID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierCostType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_CoveredByTheProjectType">
+          <End Role="CoveredByTheProjectType" Type="Self.CoveredByTheProjectType" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoveredByTheProjectType">
+              <PropertyRef Name="CoveredByTheProjectTypeID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierCoveredProjectType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_CriticalityLevel">
+          <End Role="CriticalityLevel" Type="Self.CriticalityLevel" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CriticalityLevel">
+              <PropertyRef Name="CriticalityLevelID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierCriticalyLevel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_DecisionMakingLevel">
+          <End Role="DecisionMakingLevel" Type="Self.DecisionMakingLevel" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DecisionMakingLevel">
+              <PropertyRef Name="DecisionMakingLevelID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierDecisionMakingLevel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_EconomicEffect">
+          <End Role="EconomicEffect" Type="Self.EconomicEffect" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EconomicEffect">
+              <PropertyRef Name="EconomicEffectID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierEconomicEffect" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierEmployeeManager" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_Employee1">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierEmployeeAdmin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_EmployeeFTE">
+          <End Role="EmployeeFTE" Type="Self.EmployeeFTE" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeFTE">
+              <PropertyRef Name="EmployeeFTEID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="EmployeeFTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_EmployeeType">
+          <End Role="EmployeeType" Type="Self.EmployeeType" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeType">
+              <PropertyRef Name="EmployeeTypeID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="EmployeeType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectType_EmployeeFTE">
+          <End Role="EmployeeFTE" Type="Self.EmployeeFTE" Multiplicity="0..1" />
+          <End Role="ProjectType" Type="Self.ProjectType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeFTE">
+              <PropertyRef Name="EmployeeFTEID" />
+            </Principal>
+            <Dependent Role="ProjectType">
+              <PropertyRef Name="ProjectTypeAdminFTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectType_EmployeeFTE1">
+          <End Role="EmployeeFTE" Type="Self.EmployeeFTE" Multiplicity="1" />
+          <End Role="ProjectType" Type="Self.ProjectType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeFTE">
+              <PropertyRef Name="EmployeeFTEID" />
+            </Principal>
+            <Dependent Role="ProjectType">
+              <PropertyRef Name="ProjectTypeManagerFTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_ICLevel">
+          <End Role="ICLevel" Type="Self.ICLevel" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ICLevel">
+              <PropertyRef Name="ICLevelID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierICLevel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_InternetAccess">
+          <End Role="InternetAccess" Type="Self.InternetAccess" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InternetAccess">
+              <PropertyRef Name="InternetAccessID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierInternetAccess" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_PrivacyLevel">
+          <End Role="PrivacyLevel" Type="Self.PrivacyLevel" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PrivacyLevel">
+              <PropertyRef Name="PrivacyLevelID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierPrivacyLevel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_ProjectType">
+          <End Role="ProjectType" Type="Self.ProjectType" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectType">
+              <PropertyRef Name="ProjectTypeID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierProjectType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_PurchaseOfEquipment">
+          <End Role="PurchaseOfEquipment" Type="Self.PurchaseOfEquipment" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PurchaseOfEquipment">
+              <PropertyRef Name="PurchaseOfEquipmentID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierEquipment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_PurchasingSoftwareLicenses">
+          <End Role="PurchasingSoftwareLicenses" Type="Self.PurchasingSoftwareLicenses" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PurchasingSoftwareLicenses">
+              <PropertyRef Name="PurchasingSoftwareLicensesID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierSoftwareLicenses" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_Sum">
+          <End Role="Sum" Type="Self.Sum" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sum">
+              <PropertyRef Name="SumID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierSum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classifier_TypeByContent">
+          <End Role="TypeByContent" Type="Self.TypeByContent" Multiplicity="1" />
+          <End Role="Classifier" Type="Self.Classifier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeByContent">
+              <PropertyRef Name="TypeByContentID" />
+            </Principal>
+            <Dependent Role="Classifier">
+              <PropertyRef Name="ClassifierTypeByContent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SibintekEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ArchitecturalDesign" EntityType="Self.ArchitecturalDesign" />
+          <EntitySet Name="AZI" EntityType="Self.AZI" />
+          <EntitySet Name="BelongingToSystem" EntityType="Self.BelongingToSystem" />
+          <EntitySet Name="BusinessUnitSupport" EntityType="Self.BusinessUnitSupport" />
+          <EntitySet Name="CostType" EntityType="Self.CostType" />
+          <EntitySet Name="CoveredByTheProjectType" EntityType="Self.CoveredByTheProjectType" />
+          <EntitySet Name="CriticalityLevel" EntityType="Self.CriticalityLevel" />
+          <EntitySet Name="DecisionMakingLevel" EntityType="Self.DecisionMakingLevel" />
+          <EntitySet Name="EconomicEffect" EntityType="Self.EconomicEffect" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" />
+          <EntitySet Name="EmployeeFTE" EntityType="Self.EmployeeFTE" />
+          <EntitySet Name="EmployeeType" EntityType="Self.EmployeeType" />
+          <EntitySet Name="ICLevel" EntityType="Self.ICLevel" />
+          <EntitySet Name="InternetAccess" EntityType="Self.InternetAccess" />
+          <EntitySet Name="PrivacyLevel" EntityType="Self.PrivacyLevel" />
+          <EntitySet Name="ProjectType" EntityType="Self.ProjectType" />
+          <EntitySet Name="PurchaseOfEquipment" EntityType="Self.PurchaseOfEquipment" />
+          <EntitySet Name="PurchasingSoftwareLicenses" EntityType="Self.PurchasingSoftwareLicenses" />
+          <EntitySet Name="Sum" EntityType="Self.Sum" />
+          <EntitySet Name="TypeByContent" EntityType="Self.TypeByContent" />
+          <EntitySet Name="Classifier" EntityType="Self.Classifier" />
+          <AssociationSet Name="FK_Classifier_ArchitecturalDesign" Association="Self.FK_Classifier_ArchitecturalDesign">
+            <End Role="ArchitecturalDesign" EntitySet="ArchitecturalDesign" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_AZI" Association="Self.FK_Classifier_AZI">
+            <End Role="AZI" EntitySet="AZI" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_BelongingToSystem" Association="Self.FK_Classifier_BelongingToSystem">
+            <End Role="BelongingToSystem" EntitySet="BelongingToSystem" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_BusinessUnitSupport" Association="Self.FK_Classifier_BusinessUnitSupport">
+            <End Role="BusinessUnitSupport" EntitySet="BusinessUnitSupport" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_CostType" Association="Self.FK_Classifier_CostType">
+            <End Role="CostType" EntitySet="CostType" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_CoveredByTheProjectType" Association="Self.FK_Classifier_CoveredByTheProjectType">
+            <End Role="CoveredByTheProjectType" EntitySet="CoveredByTheProjectType" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_CriticalityLevel" Association="Self.FK_Classifier_CriticalityLevel">
+            <End Role="CriticalityLevel" EntitySet="CriticalityLevel" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_DecisionMakingLevel" Association="Self.FK_Classifier_DecisionMakingLevel">
+            <End Role="DecisionMakingLevel" EntitySet="DecisionMakingLevel" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_EconomicEffect" Association="Self.FK_Classifier_EconomicEffect">
+            <End Role="EconomicEffect" EntitySet="EconomicEffect" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_Employee" Association="Self.FK_Classifier_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_Employee1" Association="Self.FK_Classifier_Employee1">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_EmployeeFTE" Association="Self.FK_Employee_EmployeeFTE">
+            <End Role="EmployeeFTE" EntitySet="EmployeeFTE" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_EmployeeType" Association="Self.FK_Employee_EmployeeType">
+            <End Role="EmployeeType" EntitySet="EmployeeType" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectType_EmployeeFTE" Association="Self.FK_ProjectType_EmployeeFTE">
+            <End Role="EmployeeFTE" EntitySet="EmployeeFTE" />
+            <End Role="ProjectType" EntitySet="ProjectType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectType_EmployeeFTE1" Association="Self.FK_ProjectType_EmployeeFTE1">
+            <End Role="EmployeeFTE" EntitySet="EmployeeFTE" />
+            <End Role="ProjectType" EntitySet="ProjectType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_ICLevel" Association="Self.FK_Classifier_ICLevel">
+            <End Role="ICLevel" EntitySet="ICLevel" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_InternetAccess" Association="Self.FK_Classifier_InternetAccess">
+            <End Role="InternetAccess" EntitySet="InternetAccess" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_PrivacyLevel" Association="Self.FK_Classifier_PrivacyLevel">
+            <End Role="PrivacyLevel" EntitySet="PrivacyLevel" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_ProjectType" Association="Self.FK_Classifier_ProjectType">
+            <End Role="ProjectType" EntitySet="ProjectType" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_PurchaseOfEquipment" Association="Self.FK_Classifier_PurchaseOfEquipment">
+            <End Role="PurchaseOfEquipment" EntitySet="PurchaseOfEquipment" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_PurchasingSoftwareLicenses" Association="Self.FK_Classifier_PurchasingSoftwareLicenses">
+            <End Role="PurchasingSoftwareLicenses" EntitySet="PurchasingSoftwareLicenses" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_Sum" Association="Self.FK_Classifier_Sum">
+            <End Role="Sum" EntitySet="Sum" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classifier_TypeByContent" Association="Self.FK_Classifier_TypeByContent">
+            <End Role="TypeByContent" EntitySet="TypeByContent" />
+            <End Role="Classifier" EntitySet="Classifier" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище SibintekModelContainer" CdmEntityContainer="SibintekEntities">
+          <EntitySetMapping Name="ArchitecturalDesign">
+            <EntityTypeMapping TypeName="SibintekModel.ArchitecturalDesign">
+              <MappingFragment StoreEntitySet="ArchitecturalDesign">
+                <ScalarProperty Name="ArchitecturalDesignID" ColumnName="ArchitecturalDesignID" />
+                <ScalarProperty Name="ArchitecturalDesign1" ColumnName="ArchitecturalDesign" />
+                <ScalarProperty Name="ArchitecturalDesignPoint" ColumnName="ArchitecturalDesignPoint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AZI">
+            <EntityTypeMapping TypeName="SibintekModel.AZI">
+              <MappingFragment StoreEntitySet="AZI">
+                <ScalarProperty Name="AZIID" ColumnName="AZIID" />
+                <ScalarProperty Name="AZI1" ColumnName="AZI" />
+                <ScalarProperty Name="AZIPoint" ColumnName="AZIPoint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BelongingToSystem">
+            <EntityTypeMapping TypeName="SibintekModel.BelongingToSystem">
+              <MappingFragment StoreEntitySet="BelongingToSystem">
+                <ScalarProperty Name="BelongingToSystemID" ColumnName="BelongingToSystemID" />
+                <ScalarProperty Name="BelongingToSystem1" ColumnName="BelongingToSystem" />
+                <ScalarProperty Name="BelongingToSystemPoint" ColumnName="BelongingToSystemPoint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BusinessUnitSupport">
+            <EntityTypeMapping TypeName="SibintekModel.BusinessUnitSupport">
+              <MappingFragment StoreEntitySet="BusinessUnitSupport">
+                <ScalarProperty Name="BusinessUnitSupportID" ColumnName="BusinessUnitSupportID" />
+                <ScalarProperty Name="BusinessUnitSupport1" ColumnName="BusinessUnitSupport" />
+                <ScalarProperty Name="BusinessUnitSupportPoint" ColumnName="BusinessUnitSupportPoint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CostType">
+            <EntityTypeMapping TypeName="SibintekModel.CostType">
+              <MappingFragment StoreEntitySet="CostType">
+                <ScalarProperty Name="CostTypeID" ColumnName="CostTypeID" />
+                <ScalarProperty Name="CosttypeName" ColumnName="CosttypeName" />
+                <ScalarProperty Name="CostTypePoint" ColumnName="CostTypePoint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoveredByTheProjectType">
+            <EntityTypeMapping TypeName="SibintekModel.CoveredByTheProjectType">
+              <MappingFragment StoreEntitySet="CoveredByTheProjectType">
+                <ScalarProperty Name="CoveredByTheProjectTypeID" ColumnName="CoveredByTheProjectTypeID" />
+                <ScalarProperty Name="CoveredByTheProjectType1" ColumnName="CoveredByTheProjectType" />
+                <ScalarProperty Name="CoveredByTheProjectTypePoint" ColumnName="CoveredByTheProjectTypePoint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CriticalityLevel">
+            <EntityTypeMapping TypeName="SibintekModel.CriticalityLevel">
+              <MappingFragment StoreEntitySet="CriticalityLevel">
+                <ScalarProperty Name="CriticalityLevelID" ColumnName="CriticalityLevelID" />
+                <ScalarProperty Name="CriticalityLevel1" ColumnName="CriticalityLevel" />
+                <ScalarProperty Name="CriticalityLevelPoint" ColumnName="CriticalityLevelPoint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DecisionMakingLevel">
+            <EntityTypeMapping TypeName="SibintekModel.DecisionMakingLevel">
+              <MappingFragment StoreEntitySet="DecisionMakingLevel">
+                <ScalarProperty Name="DecisionMakingLevelID" ColumnName="DecisionMakingLevelID" />
+                <ScalarProperty Name="DecisionMakingLevel1" ColumnName="DecisionMakingLevel" />
+                <ScalarProperty Name="DecisionMakingLevelPoint" ColumnName="DecisionMakingLevelPoint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EconomicEffect">
+            <EntityTypeMapping TypeName="SibintekModel.EconomicEffect">
+              <MappingFragment StoreEntitySet="EconomicEffect">
+                <ScalarProperty Name="EconomicEffectID" ColumnName="EconomicEffectID" />
+                <ScalarProperty Name="EconomicEffect1" ColumnName="EconomicEffect" />
+                <ScalarProperty Name="EconomicEffectPoint" ColumnName="EconomicEffectPoint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee">
+            <EntityTypeMapping TypeName="SibintekModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="EmployeeFullName" ColumnName="EmployeeFullName" />
+                <ScalarProperty Name="EmployeeType" ColumnName="EmployeeType" />
+                <ScalarProperty Name="EmployeeFTE" ColumnName="EmployeeFTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeFTE">
+            <EntityTypeMapping TypeName="SibintekModel.EmployeeFTE">
+              <MappingFragment StoreEntitySet="EmployeeFTE">
+                <ScalarProperty Name="EmployeeFTEID" ColumnName="EmployeeFTEID" />
+                <ScalarProperty Name="EmployeeFTE1" ColumnName="EmployeeFTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeType">
+            <EntityTypeMapping TypeName="SibintekModel.EmployeeType">
+              <MappingFragment StoreEntitySet="EmployeeType">
+                <ScalarProperty Name="EmployeeTypeID" ColumnName="EmployeeTypeID" />
+                <ScalarProperty Name="EmployeeType1" ColumnName="EmployeeType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ICLevel">
+            <EntityTypeMapping TypeName="SibintekModel.ICLevel">
+              <MappingFragment StoreEntitySet="ICLevel">
+                <ScalarProperty Name="ICLevelID" ColumnName="ICLevelID" />
+                <ScalarProperty Name="ICLevel1" ColumnName="ICLevel" />
+                <ScalarProperty Name="ICLevelPoint" ColumnName="ICLevelPoint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InternetAccess">
+            <EntityTypeMapping TypeName="SibintekModel.InternetAccess">
+              <MappingFragment StoreEntitySet="InternetAccess">
+                <ScalarProperty Name="InternetAccessID" ColumnName="InternetAccessID" />
+                <ScalarProperty Name="InternetAccess1" ColumnName="InternetAccess" />
+                <ScalarProperty Name="InternetAccessPoint" ColumnName="InternetAccessPoint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrivacyLevel">
+            <EntityTypeMapping TypeName="SibintekModel.PrivacyLevel">
+              <MappingFragment StoreEntitySet="PrivacyLevel">
+                <ScalarProperty Name="PrivacyLevelID" ColumnName="PrivacyLevelID" />
+                <ScalarProperty Name="PrivacyLevel1" ColumnName="PrivacyLevel" />
+                <ScalarProperty Name="PrivacyLevelPoint" ColumnName="PrivacyLevelPoint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectType">
+            <EntityTypeMapping TypeName="SibintekModel.ProjectType">
+              <MappingFragment StoreEntitySet="ProjectType">
+                <ScalarProperty Name="ProjectTypeID" ColumnName="ProjectTypeID" />
+                <ScalarProperty Name="ProjectType1" ColumnName="ProjectType" />
+                <ScalarProperty Name="ProjectTypeManagerFTE" ColumnName="ProjectTypeManagerFTE" />
+                <ScalarProperty Name="ProjectTypeAdminFTE" ColumnName="ProjectTypeAdminFTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PurchaseOfEquipment">
+            <EntityTypeMapping TypeName="SibintekModel.PurchaseOfEquipment">
+              <MappingFragment StoreEntitySet="PurchaseOfEquipment">
+                <ScalarProperty Name="PurchaseOfEquipmentID" ColumnName="PurchaseOfEquipmentID" />
+                <ScalarProperty Name="PurchaseOfEquipment1" ColumnName="PurchaseOfEquipment" />
+                <ScalarProperty Name="PurchaseOfEquipmentPoint" ColumnName="PurchaseOfEquipmentPoint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PurchasingSoftwareLicenses">
+            <EntityTypeMapping TypeName="SibintekModel.PurchasingSoftwareLicenses">
+              <MappingFragment StoreEntitySet="PurchasingSoftwareLicenses">
+                <ScalarProperty Name="PurchasingSoftwareLicensesID" ColumnName="PurchasingSoftwareLicensesID" />
+                <ScalarProperty Name="PurchasingSoftwareLicenses1" ColumnName="PurchasingSoftwareLicenses" />
+                <ScalarProperty Name="PurchasingSoftwareLicensesPoint" ColumnName="PurchasingSoftwareLicensesPoint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sum">
+            <EntityTypeMapping TypeName="SibintekModel.Sum">
+              <MappingFragment StoreEntitySet="Sum">
+                <ScalarProperty Name="SumID" ColumnName="SumID" />
+                <ScalarProperty Name="Sum1" ColumnName="Sum" />
+                <ScalarProperty Name="SumPoint" ColumnName="SumPoint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeByContent">
+            <EntityTypeMapping TypeName="SibintekModel.TypeByContent">
+              <MappingFragment StoreEntitySet="TypeByContent">
+                <ScalarProperty Name="TypeByContentID" ColumnName="TypeByContentID" />
+                <ScalarProperty Name="TypeByContent1" ColumnName="TypeByContent" />
+                <ScalarProperty Name="TypeByContentpoint" ColumnName="TypeByContentpoint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Classifier">
+            <EntityTypeMapping TypeName="SibintekModel.Classifier">
+              <MappingFragment StoreEntitySet="Classifier">
+                <ScalarProperty Name="ClassifierID" ColumnName="ClassifierID" />
+                <ScalarProperty Name="ClassifierCostType" ColumnName="ClassifierCostType" />
+                <ScalarProperty Name="ClassifierTypeByContent" ColumnName="ClassifierTypeByContent" />
+                <ScalarProperty Name="ClassifierCoveredProjectType" ColumnName="ClassifierCoveredProjectType" />
+                <ScalarProperty Name="ClassifierBelongingToSystem" ColumnName="ClassifierBelongingToSystem" />
+                <ScalarProperty Name="ClassifierPrivacyLevel" ColumnName="ClassifierPrivacyLevel" />
+                <ScalarProperty Name="ClassifierInternetAccess" ColumnName="ClassifierInternetAccess" />
+                <ScalarProperty Name="ClassifierEconomicEffect" ColumnName="ClassifierEconomicEffect" />
+                <ScalarProperty Name="ClassifierArchitecturalDesign" ColumnName="ClassifierArchitecturalDesign" />
+                <ScalarProperty Name="ClassifierAZI" ColumnName="ClassifierAZI" />
+                <ScalarProperty Name="ClassifierEquipment" ColumnName="ClassifierEquipment" />
+                <ScalarProperty Name="ClassifierSoftwareLicenses" ColumnName="ClassifierSoftwareLicenses" />
+                <ScalarProperty Name="ClassifierBusinessUnitSupport" ColumnName="ClassifierBusinessUnitSupport" />
+                <ScalarProperty Name="ClassifierSum" ColumnName="ClassifierSum" />
+                <ScalarProperty Name="ClassifierCriticalyLevel" ColumnName="ClassifierCriticalyLevel" />
+                <ScalarProperty Name="ClassifierDecisionMakingLevel" ColumnName="ClassifierDecisionMakingLevel" />
+                <ScalarProperty Name="ClassifierICLevel" ColumnName="ClassifierICLevel" />
+                <ScalarProperty Name="ClassifierQuantityCC" ColumnName="ClassifierQuantityCC" />
+                <ScalarProperty Name="ClassifierQuantityIS" ColumnName="ClassifierQuantityIS" />
+                <ScalarProperty Name="ClassifierNumberOfStakeholders" ColumnName="ClassifierNumberOfStakeholders" />
+                <ScalarProperty Name="ClassifierQuantityContract" ColumnName="ClassifierQuantityContract" />
+                <ScalarProperty Name="ClassifierBranch" ColumnName="ClassifierBranch" />
+                <ScalarProperty Name="ClassifierQuantityContractor" ColumnName="ClassifierQuantityContractor" />
+                <ScalarProperty Name="ClassifierEmployeeManager" ColumnName="ClassifierEmployeeManager" />
+                <ScalarProperty Name="ClassifierEmployeeAdmin" ColumnName="ClassifierEmployeeAdmin" />
+                <ScalarProperty Name="ClassifierProjectType" ColumnName="ClassifierProjectType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
