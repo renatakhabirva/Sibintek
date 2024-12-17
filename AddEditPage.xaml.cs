@@ -51,28 +51,7 @@ namespace Sibintek
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(ProjectNameTB.Text) ||
-        CostCB.SelectedIndex == -1 ||
-        ContentCB.SelectedIndex == -1 ||
-        CoveredCB.SelectedIndex == -1 ||
-        BeloningCB.SelectedIndex == -1 ||
-        PrivacyCB.SelectedIndex == -1 ||
-        InternetCB.SelectedIndex == -1 ||
-        ArhictectCB.SelectedIndex == -1 ||
-        AZICB.SelectedIndex == -1 ||
-        EquipmentCB.SelectedIndex == -1 ||
-        SoftwareCB.SelectedIndex == -1 ||
-        UnitCB.SelectedIndex == -1 ||
-        SumCB.SelectedIndex == -1 ||
-        CriticalCB.SelectedIndex == -1 ||
-        DecisionCB.SelectedIndex == -1 ||
-        IClevelCB.SelectedIndex == -1 ||
-        AdminCB.SelectedIndex == -1 ||
-        ManagerCB.SelectedIndex == -1)
-            {
-                MessageBox.Show("Пожалуйста, заполните все поля.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
+            
         }
     }
 }
